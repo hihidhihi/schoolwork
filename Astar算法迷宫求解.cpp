@@ -49,13 +49,13 @@ int out(){
 void no(){
 	OPLIST*p=head;
 	if(p==NULL){
-	printf("Ã»ÓĞÍ¨Â·");
+	printf("æ²¡æœ‰é€šè·¯");
 	exit(0);}
 }
 int main(){
-	printf("ÊäÈëÃÔ¹¬³¤£º");
+	printf("è¾“å…¥è¿·å®«é•¿ï¼š");
 	scanf("%d",&m);
-	printf("ÊäÈëÃÔ¹¬¿í£º");
+	printf("è¾“å…¥è¿·å®«å®½ï¼š");
 	scanf("%d",&n);
 	const int p=m*n;
 	GRID a[p];
@@ -66,9 +66,9 @@ int main(){
 		a[j*m+i].f=0;
 		a[j*m+i].g=0;
 		a[j*m+i].h=0;
-	}//³õÊ¼»¯ 
+	}//åˆå§‹åŒ– 
 	int w;
-	printf("ÊäÈëÇ½µÄÊıÁ¿£º");
+	printf("è¾“å…¥å¢™çš„æ•°é‡ï¼š");
 	scanf("%d",&w);
 	srand(unsigned(time(NULL)));
 	int r;
@@ -77,7 +77,7 @@ int main(){
 		while(a[r].w!=0||r==p-1)
 		r=(r+rand()%p)%p;
 		a[r].w=1;
-	}//Ëæ»úÔìÇ½
+	}//éšæœºé€ å¢™
 	 for(int i=0;i<m+2;i++)printf("*");
 	 printf("\n");
 	 for(int i=0;i<n;i++){
@@ -89,20 +89,20 @@ int main(){
 		printf("*\n");
 	 }
 	 for(int i=0;i<m+2;i++)printf("*");
-	 printf("\n");//»æÖÆÃÔ¹¬
+	 printf("\n");//ç»˜åˆ¶è¿·å®«
 	 for(int i=0;i==0;)
 	 {
-	 printf("ÊäÈëÆğµãºá×ø±ê£¨1~%d£©:",m);
+	 printf("è¾“å…¥èµ·ç‚¹æ¨ªåæ ‡ï¼ˆ1~%dï¼‰:",m);
 	 scanf("%d",&x);
-	 printf("ÊäÈëÆğµã×İ×ø±ê£¨1~%d£©:",n);
+	 printf("è¾“å…¥èµ·ç‚¹çºµåæ ‡ï¼ˆ1~%dï¼‰:",n);
 	 scanf("%d",&y);
-	 if(a[x+y*m].w==1)printf("´ËÎ»ÖÃÎªÇ½£¬ÇëÖØĞÂÊäÈë£¡\n");
+	 if(a[x+y*m].w==1)printf("æ­¤ä½ç½®ä¸ºå¢™ï¼Œè¯·é‡æ–°è¾“å…¥ï¼\n");
 	 else i=1;
 	 }
-	 x--;y--;//ÊäÈëÆğµã 
+	 x--;y--;//è¾“å…¥èµ·ç‚¹ 
 	 a[x+y*m].ifopen=1;
 	 OPLIST *head;
-	 in(x+y*m,a);//½¨Á¢´ò¿ªÁĞ±í 
+	 in(x+y*m,a);//å»ºç«‹æ‰“å¼€åˆ—è¡¨ 
 	 while(1){
      	 int k=out();
      	 a[k].ifclose=1;
@@ -143,13 +143,13 @@ int main(){
 			if(k-m==m*n-1)break;
 		 }
 		 no();
-	 }//A*Ëã·¨ 
+	 }//A*ç®—æ³• 
 	 a[m*n-1].ifroad=1;
 	 GRID *ccc=&a[p-1];
 	 for(int i=0;i<a[p-1].h;i++){
 	 	ccc=ccc->prev;
 	 	ccc->ifroad=1;
-	 }//×î¶ÌÂ·¾¶¼ÇÂ¼ 
+	 }//æœ€çŸ­è·¯å¾„è®°å½• 
 	 for(int i=0;i<m+2;i++)printf("*");
 	 printf("\n");
 	 for(int i=0;i<n;i++){
@@ -162,6 +162,6 @@ int main(){
 		printf("*\n");
 	 }
 	 for(int i=0;i<m+2;i++)printf("*");
-	 printf("\n");//»æÖÆ×î¶ÌÂ·¾¶ 
+	 printf("\n");//ç»˜åˆ¶æœ€çŸ­è·¯å¾„ 
 	 return 0;
 }
